@@ -42,12 +42,13 @@ For a sample usage to get started, inject any sample text string into the input 
 For the blockchainVerify node, you can locate your API Key from the page [https://tierion.com/app/api](https://tierion.com/app/api). That API key must be entered into the configuration of the node. Double click the node to access the configuration. Enable debug to see extra messages in the debug panel.
 
 Input Mandatory: Supply the input with msg.payload.tierionReceiptId which was returned when the initial payload was stamped to the blockchain.
+
 Input Optional: Supply the input with msg.payload.dataToHash which was the original payload data. The node will hash that data and confirm it matches the Tierion version of the target hash within the receipt mentioned in the msg.payload.tierionReceiptId.
 
 Output: 
-msg.payload.result will be "PASS" or "FAIL". 
-msg.payload.tierionReceipt is the entire Tieirion receipt in JSON format. 
-msg.blockchainLocation will contain a url to view the particular blockchain transaction which stamped the hash data. You will be able to view the OP_RETURN code and verify it matches the target hash within the receipt. 
+- msg.payload.result will be "PASS" or "FAIL". 
+- msg.payload.tierionReceipt is the entire Tieirion receipt in JSON format. 
+- msg.blockchainLocation will contain a url to view the particular blockchain transaction which stamped the hash data. You will be able to view the OP_RETURN code and verify it matches the target hash within the receipt. 
   
 [Tierion.com User Guide](https://tierion.com/docs)
 
